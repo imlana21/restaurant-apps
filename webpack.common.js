@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
   entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'bundle.js',
   },
   module: {
@@ -44,8 +44,8 @@ module.exports = {
         {
           // Dari src/public/
           from: path.resolve(__dirname, 'src/public/'),
-          // Ke dist/
-          to: path.resolve(__dirname, 'dist/'),
+          // Ke docs/
+          to: path.resolve(__dirname, 'docs/'),
         },
       ],
     }),
