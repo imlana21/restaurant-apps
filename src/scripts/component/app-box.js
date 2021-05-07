@@ -40,6 +40,9 @@ class AppBox extends HTMLElement {
             <div class="loading-page">
                 <div class="loader"> </div>
             </div>
+            <div class="loading-page">
+                <div class="loader"> </div>
+            </div>
         `;
     }
 }

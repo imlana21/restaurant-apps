@@ -149,6 +149,7 @@ app-box {
     div.loading-page {
         margin: 10em auto;
         max-width: 90px;
+        display: block;
 
         div.loader {
             border: 16px solid var(--white); /* Light grey */
