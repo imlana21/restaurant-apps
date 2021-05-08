@@ -5,26 +5,20 @@ class AppBar extends HTMLElement {
 
     render() {
         this.innerHTML = `
-            <nav>
-                <div>
-                    <h1>
-                        <a> Hunger Apps </a>
-                    </h1>
-                    <div> 
-                        <a id="hamburger" href="#">☰</a>
-                    </div>
-                    <ul id="drawer-nav">
-                        <li><a href="/"> Home </a></li>
-                        <li><a href="#"> Favorite </a></li>
-                        <li><a href="https://cv-lana.netlify.app/"> About </a></li>
-                    </ul>
-                </div>
+            <h1>
+                <a> Hunger Apps </a>
+            </h1>
+            <div>
+                <button type="button" id="hamburger">
+                    <span> Open Menu Navigation </span>
+                    ☰ 
+                </button>
+            <div>
+            <nav id="drawer">
+                <a href="/"> Home </a>
+                <a href="#"> Favorite </a>
+                <a href="https://cv-lana.netlify.app/"> About </a>
             </nav>
-            <ul id="drawer">
-                <li><a href="/"> Home </a></li>
-                <li><a href="#"> Favorite </a></li>
-                <li><a href="https://cv-lana.netlify.app/"> About </a></li>
-            </ul>
         `;
     }
 
