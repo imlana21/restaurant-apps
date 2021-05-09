@@ -17,7 +17,7 @@ class AppMain extends HTMLElement {
                 <div class="jumbotron">
                     <h1> Restaurant Apps </h1>
                 </div>
-                <article>
+                <article id="content">
                     <h2 class="title"> Select Restaurant </h2>
                     <app-box></app-box>
                 </article>
