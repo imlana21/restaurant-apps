@@ -1,8 +1,4 @@
 class AppBox extends HTMLElement {
-    constructor() {
-        super();
-    }
-
     /* Function Render */
     render() {
         this.innerHTML = `
@@ -12,7 +8,7 @@ class AppBox extends HTMLElement {
             this.innerHTML += `
                 <section>
                     <figure>
-                        <img src="${data.pictureId}" alt="${data.name}">
+                        <img src="${data.pictureId}" alt="${data.name}" tabindex="0">
                         <figcaption>
                             <b> Rating : ${data.rating} </b>
                             <h2> ${data.name} </h2>

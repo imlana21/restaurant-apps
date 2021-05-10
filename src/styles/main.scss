@@ -25,9 +25,18 @@ body, html {
 a#skip {
     color: var(--white);
     background-color: var(--green-2);
-    clip: rect(1px, 1px, 1px);
-    margin: 0;
+    text-decoration: none;
+    font-weight: bold;
+    transform: translateY(-100%);
     position: absolute;
+
+    &:focus {
+        background-color: var(--green-2);
+        z-index: 99;
+        color: var(--black);
+        padding: 1em;
+        transform: translateY(0%);
+    }
 }
 
 app-bar {
@@ -56,14 +65,6 @@ app-bar {
             color: var(--white);
             font-size: 1rem;
             padding: .5rem 1rem;
-    
-            span {
-                position: absolute;
-                width: 1em;
-                height: 1em;
-                clip: rect(0,0,0,0);
-                white-space: nowrap;
-            }
         }
     }
 }

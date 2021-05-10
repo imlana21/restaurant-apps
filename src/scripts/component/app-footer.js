@@ -1,8 +1,4 @@
 class AppFoot extends HTMLElement {
-    constructor() {
-        super();
-    }
-
     connectedCallback() {
         this.render();
     }

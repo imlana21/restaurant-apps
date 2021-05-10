@@ -1,8 +1,4 @@
 class AppMain extends HTMLElement {
-    constructor() {
-        super();
-    }
-
     fetchData() {
         fetch('./data.json')
             .then(response => response.json())
@@ -17,10 +13,12 @@ class AppMain extends HTMLElement {
                 <div class="jumbotron">
                     <h1> Restaurant Apps </h1>
                 </div>
-                <article id="content">
-                    <h2 class="title"> Select Restaurant </h2>
-                    <app-box></app-box>
-                </article>
+                <main id="content">
+                    <article>
+                        <h2 class="title"> Select Restaurant </h2>
+                        <app-box></app-box>
+                    </article>
+                </main>
         `;
     }
 

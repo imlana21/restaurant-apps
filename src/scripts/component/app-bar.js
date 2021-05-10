@@ -1,16 +1,11 @@
 class AppBar extends HTMLElement {
-    constructor() {
-        super();
-    }
-
     render() {
         this.innerHTML = `
             <h1>
                 <a> Hunger Apps </a>
             </h1>
             <div>
-                <button type="button" id="hamburger">
-                    <span> Open Menu Navigation </span>
+                <button type="button" id="hamburger" aria-label="Open Menu Navigation">
                     ☰ 
                 </button>
             <div>
