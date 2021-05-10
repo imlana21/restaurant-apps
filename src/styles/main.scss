@@ -40,35 +40,99 @@ a#skip {
 }
 
 app-bar {
-    width: 100%;
-    background-color: var(--black);
     color: var(--white);
-    padding: 0.5rem;
+    display: block;
     position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    
+    ul {
+        list-style: none;
+    }
 
     a {
         color: var(--white);
         text-decoration: none;
-        flex-grow: 0;
+
+        &:hover, &:focus {
+            background-color: var(--green-2);
+            color: var(--black);
+        }
     }
 
-    &>div {
-        flex-grow: 1;
-        text-align: right;
+    nav {
+        width: 100%;
+        display: flex;
+        padding: 0.1rem 0;
+        z-index: 98;
+        background-color: var(--black);
+        position: relative;
+        align-items: center;
 
-        button#hamburger {
-            background-color: transparent;
-            border: none;
-            color: var(--white);
-            font-size: 1rem;
-            padding: .5rem 1rem;
+        h1 {
+            flex-grow: 0;
+            display: flex;
+            padding: .5em;
+        }
+
+        &>div {
+            flex-grow: 1;
+            text-align: right;
+
+            #hamburger {
+                background-color: transparent;
+                border: none;
+                color: var(--white);
+                font-size: 1rem;
+                height: 44px;
+                width: 44px;
+    
+                &:active {
+                    background-color: var(--green-2);
+                }
+            }
+        }
+        
+        .nav-menu {
+            flex-grow: 1;
+            ul {
+                justify-content: flex-end;
+                display: flex;
+                li {
+                    a {
+                        padding: 1em;
+                    }
+                }
+
+            }
+        }
+    }
+
+    #drawer {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        position: absolute;
+        background-color: var(--black);
+        width: 100%;
+        padding: 0 1rem .5rem;
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-250px);
+        border-radius: 0 0 1rem 1rem;
+
+        &.open {
+            transform: translateY(0);
+            z-index: 0;
+        }
+        
+        li {
+            margin: 1px;
+            a {
+                border-radius: .5rem;
+                display: block;
+                padding: .5rem 1rem;
+            }
         }
     }
 }
-
 
 app-main { 
     div.jumbotron {
@@ -159,6 +223,11 @@ app-foot {
 }
 
 @media (max-width: 649px) {
+    app-bar {
+        .nav-menu {
+            display: none;
+        }
+    }
 }
 
 /* md */
@@ -166,6 +235,13 @@ app-foot {
     app-box {
         grid-template-columns: repeat(2, 1fr);
     }   
+
+    app-bar {
+        .button-menu, #drawer {
+            display: none;
+        }
+    }
+
 }
 
 /* lg */

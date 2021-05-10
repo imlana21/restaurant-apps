@@ -7,5 +7,8 @@ import './component/app-box';
 import './component/app-main';
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('skip').autofocus();
+    document.getElementById('skip').addEventListener('focus', () => {
+        document.body.scrollTop = 0; 
+        document.documentElement.scrollTop = 0;
+    });
 });
