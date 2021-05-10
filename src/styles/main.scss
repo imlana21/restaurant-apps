@@ -129,7 +129,8 @@ app-bar {
             a {
                 border-radius: .5rem;
                 display: block;
-                padding: .5rem 1rem;
+                padding: 1rem;
+                min-height: 44px;
             }
         }
     }
@@ -180,13 +181,34 @@ app-box {
         figcaption {
             padding: 1rem;
 
-            b, h2, p {
+            h2, p {
                 margin: 0.3em 0;
             }
 
             p {
                 text-indent: 1.5em;
                 text-align: justify;
+            }
+            div {
+                display: flex;
+                border-bottom: solid 1px var(--grey);
+                padding-bottom: .5rem;
+
+                span {
+                    font-weight: bold;
+
+                    svg {
+                        max-height: 1em;
+                    }
+                }
+
+                .rating {
+                    flex-grow: 1;
+                }
+
+                .city {
+                    flex-grow: 0;
+                }
             }
         }
     }
