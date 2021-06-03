@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 
 module.exports = {
@@ -20,17 +21,17 @@ module.exports = {
             loader: 'css-loader',
           },
           {
-            loader: 'sass-loader'
-          }
+            loader: 'sass-loader',
+          },
         ],
       },
       {
-          test: /\.(png|svg|jpg|jpeg|gif)$/,
-          use: [
-              'file-loader',
-          ],
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: [
+          'file-loader',
+        ],
       },
-    ]
+    ],
   },
   plugins: [
     // Default Template
@@ -48,6 +49,10 @@ module.exports = {
           to: path.resolve(__dirname, 'docs/'),
         },
       ],
+    }),
+    // CSS Async
+    new MiniCssExtractPlugin({
+      insert: '.resto_list>section'
     }),
   ],
 };

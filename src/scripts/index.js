@@ -1,14 +1,30 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
+import App from './views/app';
 
-import './component/app-bar';
-import './component/app-footer';
-import './component/app-box';
-import './component/app-main';
+const app = new App({
+  appBar: document.querySelector('header'),
+  appBody: document.querySelector('main'),
+  appFooter: document.querySelector('footer'),
+});
+
+// Lifecycle
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('skip').addEventListener('focus', () => {
-        document.body.scrollTop = 0; 
-        document.documentElement.scrollTop = 0;
-    });
+  document.getElementById('skip').addEventListener('focus', () => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+  app.render();
+});
+
+window.addEventListener('load', () => {
+});
+
+window.addEventListener('hashchange', () => {
+  app.render();
+});
+
+window.addEventListener('beforeunload', () => {
+
 });
