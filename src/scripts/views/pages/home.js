@@ -6,14 +6,12 @@ const Home = {
   async render() {
     return `
       <div id="home">
-      <!--
         <div class="jumbotron">
           <h1> Restaurant Apps </h1>
         </div>
-      -->
         <article id="content">
           <h2> Select Restaurant </h2>
-          <div class="resto_list">
+          <div id="restolist">
             ${await this._getData()}
           </div>
         </article>

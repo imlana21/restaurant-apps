@@ -1,0 +1,27 @@
+@media screen and (max-width: 649px) {
+  header {
+      .nav-menu {
+          display: none;
+      }
+  }
+}
+
+/* md */
+@media screen and (min-width: 650px) {
+  header {
+      .button-menu, #drawer {
+          display: none;
+      }
+  }
+
+  div#home article#content div#restolist {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* lg */
+@media screen and (min-width: 979px) { 
+  div#home article#content div#restolist {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}

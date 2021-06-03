@@ -15,10 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
-  app.render();
 });
 
 window.addEventListener('load', () => {
+  app.render();
 });
 
 window.addEventListener('hashchange', () => {

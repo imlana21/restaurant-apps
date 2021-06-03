@@ -14,12 +14,8 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
+          'style-loader', 
+          'css-loader',
           {
             loader: 'sass-loader',
           },
@@ -49,10 +45,6 @@ module.exports = {
           to: path.resolve(__dirname, 'docs/'),
         },
       ],
-    }),
-    // CSS Async
-    new MiniCssExtractPlugin({
-      insert: '.resto_list>section'
     }),
   ],
 };
