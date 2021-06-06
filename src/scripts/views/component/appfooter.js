@@ -1,5 +1,5 @@
 const AppFooter = {
-  async render() {
+  render() {
     return `
       <p> copyright &copy;2020 - Hungers Apps </p>
     `;

@@ -1,6 +1,5 @@
 import RestoDataSource from '../../data/resto-datasource';
 import AppBox from '../component/appbox';
-import Loading from '../component/loader';
 
 const Home = {
   async render() {
@@ -20,15 +19,12 @@ const Home = {
   },
   async _getData() {
     const datasource = await RestoDataSource.listData();
+    let pages = '';
 
-    let pages = Loading.render();
+    datasource.map(async (data) => {
+      pages += AppBox.render(data);
+    });
 
-    if (datasource) {
-      pages = '';
-      datasource.map(async (data) => {
-        pages += AppBox.render(data);
-      });
-    }
     return pages;
   },
 };

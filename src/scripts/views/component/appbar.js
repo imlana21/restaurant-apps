@@ -1,5 +1,5 @@
 const AppBar = {
-  async render() {
+  render() {
     return `
       <nav> 
         <h1>

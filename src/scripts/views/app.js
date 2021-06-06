@@ -1,7 +1,7 @@
 import AppBar from './component/appbar';
 import AppFooter from './component/appfooter';
 import Loading from './component/loader';
-import DetailResto from './pages/detail_resto';
+import DetailResto from './pages/detail_page';
 
 class App {
   constructor({ appBar, appBody, appFooter }) {
@@ -11,9 +11,9 @@ class App {
   }
 
   async _initAppShell() {
-    this._appBar.innerHTML = await AppBar.render();
+    this._appBar.innerHTML = AppBar.render();
+    this._appFooter.innerHTML = AppFooter.render();
     await AppBar.afterRender();
-    this._appFooter.innerHTML = await AppFooter.render();
   }
 
   async render() {

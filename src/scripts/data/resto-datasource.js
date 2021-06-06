@@ -7,6 +7,13 @@ class RestoDataSource {
 
     return json.restaurants;
   }
+
+  static async detail(id) {
+    const response = await fetch(ApiEndpoint.detail.url(id));
+    const json = await response.json();
+
+    return json.restaurant;
+  }
 }
 
 export default RestoDataSource;
