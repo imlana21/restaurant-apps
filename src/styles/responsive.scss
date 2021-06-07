@@ -7,21 +7,35 @@
 }
 
 /* md */
-@media screen and (min-width: 650px) {
+@media (min-width: 650px) {
   header {
       .button-menu, #drawer {
           display: none;
       }
   }
 
-  div#home article#content div#restolist {
+  div#home article#content div#restolist,
+  div#detailresto div#reviews>div {
       grid-template-columns: repeat(2, 1fr);
+  }
+
+  div#detailresto {
+    font-size: 110%;
   }
 }
 
 /* lg */
 @media screen and (min-width: 979px) { 
-  div#home article#content div#restolist {
+  div#home article#content div#restolist,
+  div#detailresto div#reviews>div {
       grid-template-columns: repeat(3, 1fr);
+  }
+
+  div#detailresto div#content {
+    display: flex;
+
+    div.leftside img {
+      padding: .5rem;      
+    }
   }
 }

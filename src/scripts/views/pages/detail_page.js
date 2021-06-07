@@ -24,20 +24,26 @@ const DetailResto = {
               ${Detail.render(detail)}
             </div>
             <article class="rightside">
-              <div id="description">
+              <div id="description" tabindex="1">
+                <h3> Deskripsi </h3>
                 ${Description.render(data.description)}
               </div>
-              <div id="categories">
+              <div id="categories" tabindex="1">
+                <h3> Katagori </h3>
                 ${Menu.listCategori(data.categories)}
               </div>
               <div id="menus">
+                <h3> Menu </h3>
                 ${Menu.listMenu(data.menus)}
               </div>
-              <div id="reviews">
-                ${Review.render(data.customerReviews)}
-              </div>
-            </article> 
+            </article>
           </div>
+          <div id="reviews">
+            <h3> Reviews </h3>
+            <div>
+              ${Review.render(data.customerReviews)}
+            </div>
+          </div> 
         </div>
       </div>
     `;

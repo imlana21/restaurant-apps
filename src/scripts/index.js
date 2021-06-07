@@ -1,6 +1,7 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.scss';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   appBar: document.querySelector('header'),
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('load', () => {
   app.render();
+  swRegister();
 });
 
 window.addEventListener('hashchange', () => {

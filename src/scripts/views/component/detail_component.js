@@ -1,27 +1,26 @@
 /* eslint-disable no-return-assign */
 import ApiEndpoint from '../../globals/api-endpoint';
+import escapeHtml from '../../utils/htmlescape';
 
 const Review = {
   render(reviews) {
     return `
-      <!-- customerReviews -->
-      <h3> Reviews </h3>
       ${this._listMap(reviews)}
     `;
   },
   _listMap(reviews) {
     let list = '';
-    const test = reviews.filter((review) => (
+    const filteredReview = reviews.filter((review) => (
       review.name === '' || review.name === undefined ? false : reviews
     ));
 
-    test.map((review) => list += `
-      <div class="review">
+    filteredReview.map((review) => list += `
+      <div class="review" tabindex="1">
         <div>
-          <h4> ${review.name} </h4>
+          <h4> ${escapeHtml(review.name)} </h4>
           <span> ${review.date} </span>
         </div>
-        <p> ${review.review} </p>
+        <p> ${escapeHtml(review.review)} </p>
       </div>
     `);
 
@@ -32,25 +31,24 @@ const Review = {
 const Menu = {
   listMenu(menus) {
     return `
-      <!-- menus -->
-      <h3> Menu </h3>
       <div>
-        <h4> Food </h4>
-        <ol>
-          ${this._listName(menus.foods)}
-        </ol>
-      </div>
-      <div>
-        <h4> Drinks </h4>
-        <ol>
-          ${this._listName(menus.drinks)}
-        </ol>
+        <div tabindex="1">
+          <h4> Food </h4>
+          <ol>
+            ${this._listName(menus.foods)}
+          </ol>
+        </div>
+        <div tabindex="1">
+          <h4> Drinks </h4>
+          <ol>
+            ${this._listName(menus.drinks)}
+          </ol>
+        </div>
       </div>
     `;
   },
   listCategori(categories) {
     return `
-      <h3> Katagori </h3>
       <ol>
          ${this._listName(categories)}
       </ol>
@@ -68,8 +66,6 @@ const Menu = {
 const Description = {
   render(description) {
     return `
-      <!-- description -->
-      <h3> Deskripsi </h3>
       <p> ${description} </p>
     `;
   },
