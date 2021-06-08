@@ -41,7 +41,6 @@ const CacheHelper = {
 
   async _addCache(req) {
     const cache = await this._openCache();
-    console.log(req);
     cache.add(req);
   },
 };

@@ -9,9 +9,11 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
+  console.log('Aktivasi Service Worker');
   event.waitUntil(CacheHelper.deleteOldCache());
 });
 
 self.addEventListener('fetch', (event) => {
+  console.log('Fetch Data with Stale While Revalidate stategies');
   event.respondWith(CacheHelper.revalidateCache(event.request));
 });
