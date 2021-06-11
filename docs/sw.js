@@ -11,10 +11,6 @@ var serviceWorkerOption = {
     "/icons/soup-384.png",
     "/icons/soup-48.png",
     "/icons/soup-96.png",
-    "/images/heros/hero-image_1.jpg",
-    "/images/heros/hero-image_2.jpg",
-    "/images/heros/hero-image_3.jpg",
-    "/images/heros/hero-image_4.jpg",
     "/index.html"
   ]
 };
