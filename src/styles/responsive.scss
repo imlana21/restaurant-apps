@@ -15,7 +15,8 @@
   }
 
   div#home article#content div#restolist,
-  div#detailresto div#reviews>div {
+  div#detailresto div#reviews>div,
+  div#favorite article#content div#restolist {
       grid-template-columns: repeat(2, 1fr);
   }
 
@@ -27,7 +28,8 @@
 /* lg */
 @media screen and (min-width: 969px) { 
   div#home article#content div#restolist,
-  div#detailresto div#reviews>div {
+  div#detailresto div#reviews>div,
+  div#favorite article#content div#restolist {
       grid-template-columns: repeat(3, 1fr);
   }
 

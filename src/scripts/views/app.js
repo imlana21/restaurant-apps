@@ -1,7 +1,8 @@
+import UrlParser from '../routes/urlParser';
 import AppBar from './component/appbar';
 import AppFooter from './component/appfooter';
 import Loading from './component/loader';
-import DetailResto from './pages/detail_page';
+import routes from '../routes/route';
 
 class App {
   constructor({ appBar, appBody, appFooter }) {
@@ -17,9 +18,12 @@ class App {
   }
 
   async render() {
+    const url = UrlParser.parseUrlWithCombiner();
+    const page = routes[url];
     this._initAppShell();
     this._appBody.innerHTML = Loading.render();
-    this._appBody.innerHTML = await DetailResto.render();
+    this._appBody.innerHTML = await page.render();
+    await page.afterRender();
   }
 }
 

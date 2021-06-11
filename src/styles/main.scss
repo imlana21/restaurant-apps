@@ -2,8 +2,9 @@
 @import './header.scss';
 @import './footer.scss';
 @import './content/home.scss';
-@import './content//detail_resto.scss';
+@import './content/detail_resto.scss';
 @import './responsive.scss';
+@import './content/restobox.scss';
 
 
 /* Reset Tampilan */
@@ -27,7 +28,6 @@ main {
     width: 100%;
 }
 /* End Reset */
-
 a#skip {
     color: var(--white);
     background-color: var(--green-2);
@@ -63,4 +63,10 @@ div.loading-page {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
     }
+}
+
+.empty {
+    height: 100%;
+    width: 100%;
+    font-size: 120%;
 }

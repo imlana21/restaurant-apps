@@ -3,17 +3,17 @@ import Config from '../globals/config';
 
 const dbPromise = openDB(Config.idb_name, Config.idb_version, {
   upgrade(db) {
-    db.createObjectStoreI(Config.object_store_name, { keyPath: 'id' });
+    db.createObjectStore(Config.object_store_name, { keyPath: 'id' });
   },
 });
 
-const FavoriteResto = {
+const FavoriteRestoDb = {
   async getResto(id) {
     return (await dbPromise).get(Config.object_store_name, id);
   },
 
   async getAllResto() {
-    return (await dbPromise).get(Config.object_store_name);
+    return (await dbPromise).getAll(Config.object_store_name);
   },
 
   async putResto(resto) {
@@ -25,4 +25,4 @@ const FavoriteResto = {
   },
 };
 
-export default FavoriteResto;
+export default FavoriteRestoDb;

@@ -1,5 +1,6 @@
 import RestoDataSource from '../../data/resto-datasource';
-import AppBox from '../component/appbox';
+import RestoBox from '../component/resto-box';
+import Loading from '../component/loader';
 
 const Home = {
   async render() {
@@ -11,18 +12,25 @@ const Home = {
         <article id="content">
           <h2> Select Restaurant </h2>
           <div id="restolist">
-            ${await this._getData()}
           </div>
         </article>
       </div>
     `;
   },
-  async _getData() {
+
+  async afterRender() {
+    const restoListContainer = document.getElementById('restolist');
+
+    restoListContainer.innerHTML = Loading.render();
+    restoListContainer.innerHTML = await this._restoList();
+  },
+
+  async _restoList() {
     const datasource = await RestoDataSource.listData();
     let pages = '';
 
     datasource.map(async (data) => {
-      pages += AppBox.render(data);
+      pages += RestoBox.render(data);
     });
 
     return pages;

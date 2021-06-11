@@ -5,10 +5,12 @@ import {
   Review,
 } from '../component/detail_component';
 import RestoDataSource from '../../data/resto-datasource';
+import UrlParser from '../../routes/urlParser';
+import LikedButton from '../component/liked-btn';
 
 const DetailResto = {
   async render() {
-    const data = await this._getData('rqdv5juczeskfw1e867');
+    const data = await this._getData();
     const detail = [
       data.pictureId,
       data.name,
@@ -44,14 +46,27 @@ const DetailResto = {
               ${Review.render(data.customerReviews)}
             </div>
           </div> 
+          <div id="like_container">
+          </div>
         </div>
       </div>
     `;
   },
-  async _getData(id) {
-    const datasource = await RestoDataSource.detail(id);
 
-    return datasource;
+  async afterRender() {
+    const likeContainer = document.getElementById('like_container');
+
+    LikedButton.init({
+      restoContainer: likeContainer,
+      restoData: await this._getData(),
+    });
+  },
+
+  async _getData() {
+    const url = UrlParser.parseUrlWithoutCombiner();
+    const restoData = await RestoDataSource.detail(url.id);
+
+    return restoData;
   },
 };
 

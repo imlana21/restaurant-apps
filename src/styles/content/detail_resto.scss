@@ -85,3 +85,18 @@ div#detailresto {
     }
   }
 }
+
+div#like_container {
+    z-index: 99;
+    position: fixed;
+    bottom: 1rem;
+    right: 2rem;
+
+    button#likeButton {
+      background-color: #505d6f;
+      border: none;
+      height: 60px;
+      width: 60px;
+      border-radius: 9999px;
+    }
+}
