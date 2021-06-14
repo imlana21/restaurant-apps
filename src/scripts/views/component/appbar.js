@@ -12,16 +12,16 @@ const AppBar = {
         </div>
         <div class="nav-menu">
           <ul>
-            <li> <a href="/" tabindex="1"> Home </a> </li>
-            <li> <a href="/#/favorite" tabindex="1"> Favorite </a> </li>
-            <li> <a href="https://cv-lana.netlify.app/" tabindex="1"> About </a> </li>
+            <li> <a href="/"> Home </a> </li>
+            <li> <a href="/#/favorite"> Favorite </a> </li>
+            <li> <a href="https://cv-lana.netlify.app/"> About </a> </li>
           </ul>
         </div>
       </nav>
       <ul id="drawer" class="">
-        <li> <a href="/" tabindex="1"> Home </a> </li>
-        <li> <a href="/#/favorite" tabindex="1"> Favorite </a> </li>
-        <li> <a href="https://cv-lana.netlify.app/" tabindex="1"> About </a> </li>
+        <li> <a href="/"> Home </a> </li>
+        <li> <a href="/#/favorite"> Favorite </a> </li>
+        <li> <a href="https://cv-lana.netlify.app/"> About </a> </li>
       </ul>
     `;
   },

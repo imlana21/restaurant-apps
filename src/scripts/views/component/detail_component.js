@@ -15,7 +15,7 @@ const Review = {
     ));
 
     filteredReview.map((review) => list += `
-      <div class="review" tabindex="1">
+      <div class="review" tabindex="0">
         <div>
           <h4> ${escapeHtml(review.name)} </h4>
           <span> ${review.date} </span>
