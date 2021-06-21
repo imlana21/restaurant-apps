@@ -14,7 +14,11 @@
     "ignorePatterns": [
         "webpack.common.js",
         "webpack.dev.js",
-        "webpack.prod.js"
+        "webpack.prod.js",
+        "specs/",
+        "karma.conf.cjs",
+        "karma.conf.js"
+        
     ],
     "rules": {
         "import/no-extraneous-dependencies": 0,
