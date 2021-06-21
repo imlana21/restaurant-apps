@@ -1,28 +1,28 @@
 // Karma configuration
-// Generated on Sun Jun 20 2021 06:52:36 GMT+0700 (Western Indonesia Time)
+// Generated on Mon Jun 21 2021 17:53:34 GMT+0700 (Western Indonesia Time)
 
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: './',
-
+    basePath: '',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['browserify', 'jasmine', 'should'],
+    frameworks: [
+      'jasmine', 
+    ],
 
-    webpack: require('./webpack.dev'),
-    
-
-    browserify: {
-        debug: true,
-        transform: [ ['babelify'] ]
-    },
+    plugins: [
+      'karma-jasmine',
+      'karma-webpack',
+      'karma-chrome-launcher'
+    ],
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'specs/likeResto.specs.js' }
+      {pattern: 'specs/**/*.specs.js', watched: false},
+      
     ],
 
 
@@ -30,23 +30,18 @@ module.exports = function(config) {
     exclude: [
     ],
 
-
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'node_modules/jasmine-core/lib/jasmine-core/jasmine.css': ['browserify'],
-      'node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js': ['browserify'],
-      'node_modules/jasmine-core/lib/jasmine-core/jasmine.js': ['browserify'],
-      'node_modules/jasmine-core/lib/jasmine-core/boot.js': ['browserify'],
-      '**/*.js': ['browserify']
+      'specs/**/*.specs.js': ['webpack']
     },
 
-
+    webpack: require('./webpack.dev'),
+    
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress'],
-
 
     // web server port
     port: 9876,
@@ -76,6 +71,6 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity,
+    concurrency: Infinity
   })
 }

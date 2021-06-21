@@ -7,19 +7,13 @@
     "extends": [
         "airbnb-base"
     ],
+    "globals": {
+        "jasmine": true
+    },
     "parserOptions": {
         "ecmaVersion": 12,
         "sourceType": "module"
     },
-    "ignorePatterns": [
-        "webpack.common.js",
-        "webpack.dev.js",
-        "webpack.prod.js",
-        "specs/",
-        "karma.conf.cjs",
-        "karma.conf.js"
-        
-    ],
     "rules": {
         "import/no-extraneous-dependencies": 0,
         "no-console": 0,
