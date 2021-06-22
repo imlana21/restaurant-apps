@@ -57,7 +57,7 @@ const DetailResto = {
     const likeContainer = document.getElementById('like_container');
 
     LikedButton.init({
-      restoContainer: likeContainer,
+      buttonContainer: likeContainer,
       restoData: await this._getData(),
     });
   },

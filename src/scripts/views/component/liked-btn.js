@@ -1,8 +1,8 @@
 import FavoriteRestoDb from '../../data/favorite-idb';
 
 const LikedButton = {
-  async init({ restoContainer, restoData }) {
-    this._restoContainer = restoContainer;
+  async init({ buttonContainer, restoData }) {
+    this._likeContainer = buttonContainer;
     this._restoData = restoData;
 
     await this.renderButton();
@@ -25,7 +25,7 @@ const LikedButton = {
   },
 
   renderLike() {
-    this._restoContainer.innerHTML = this._createLikeButton();
+    this._likeContainer.innerHTML = this._createLikeButton();
 
     const likeBtn = document.querySelector('#likeButton');
     likeBtn.addEventListener('click', async () => {
@@ -35,7 +35,7 @@ const LikedButton = {
   },
 
   renderLiked(id) {
-    this._restoContainer.innerHTML = this._createLikedButton();
+    this._likeContainer.innerHTML = this._createLikedButton();
 
     const likeBtn = document.querySelector('#likeButton');
     likeBtn.addEventListener('click', async () => {
