@@ -1,11 +1,21 @@
 div#home, div#favorite { 
   div.jumbotron {
-      background: url('../images/heros/hero-image_2.jpg') no-repeat center center;
-      color: var(--white);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      background: url('../images/heros/hero-image_2.jpg') no-repeat center center fixed;
+      color: var(--grey);
+      min-height: 92vh;
+
+      &>div {
+        background-color: rgba(0, 0, 0, .5); 
+        min-width: 100%; 
+        min-height: 92vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            font-size: 310%;
+        }
+      }
   }
 
   h1, h2 {

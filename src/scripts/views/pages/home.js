@@ -7,7 +7,9 @@ const Home = {
     return `
       <div id="home">
         <div class="jumbotron">
-          <h1> Restaurant Apps </h1>
+          <div>
+            <h1> Restaurant Apps </h1>
+          </div>
         </div>
         <article id="content">
           <h2> Select Restaurant </h2>

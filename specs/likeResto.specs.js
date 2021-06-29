@@ -6,6 +6,7 @@ const restoId = 'rqdv5juczeskfw1e867';
 describe('(LIKE BUTTON TESTING)', () => {
   beforeEach(async () => {
     await buttonPresenter(restoId);
+    await FavoriteRestoDb.deleteResto(restoId);
   });
 
   describe('Ketika restorant belum disukai =>', () => {
@@ -22,19 +23,19 @@ describe('(LIKE BUTTON TESTING)', () => {
   
 
   describe('Mengecek Movie =>', () => {
-    it('Ada di database ketika like button ditekan', async () => {
+    it('Ada di database ketika like ditekan', async () => {
       document.querySelector('#likeButton').dispatchEvent(new Event('click'));
       
       const resto = await FavoriteRestoDb.getResto(restoId);
    
-      expect(resto).toEqual({ id: restoId}); 
+      expect(resto).toEqual(jasmine.objectContaining({ id: restoId})); 
 
     });
 
-    it('Tidak ada didatabase ketika like button belum ditekan', async () => {
+    it('Tidak ada didatabase ketika like belum ditekan', async () => {
       const resto = await FavoriteRestoDb.getResto(restoId);
    
-      expect(resto).not.toEqual({ id: restoId}); 
+      expect(resto).not.toEqual(jasmine.objectContaining({ id: restoId})); 
     });
 
     afterEach( async () => {

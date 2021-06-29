@@ -26,7 +26,3 @@ window.addEventListener('load', () => {
 window.addEventListener('hashchange', () => {
   app.render();
 });
-
-window.addEventListener('beforeunload', () => {
-
-});
