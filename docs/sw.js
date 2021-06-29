@@ -10,6 +10,7 @@ var serviceWorkerOption = {
     "/icons/soup-196.png",
     "/icons/soup-384.png",
     "/icons/soup-48.png",
+    "/icons/soup-512.png",
     "/icons/soup-96.png",
     "/index.html"
   ]

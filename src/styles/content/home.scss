@@ -3,6 +3,7 @@ div#home, div#favorite {
       background: url('../images/heros/hero-image_2.jpg') no-repeat center center fixed;
       color: var(--grey);
       min-height: 92vh;
+      min-width: 100vw;
 
       &>div {
         background-color: rgba(0, 0, 0, .5); 
