@@ -1,16 +1,19 @@
 var serviceWorkerOption = {
   "assets": [
     "/bd6b63650298f334a08b66446d66c536.jpg",
+    "/0.bundle.js",
+    "/1.bundle.js",
     "/bundle.js",
     "/manifest.json",
     "/icons/favorite_black_24dp.svg",
     "/icons/favorite_border_black_24dp.svg",
     "/icons/license-soup.pdf",
-    "/icons/soup-144.png",
-    "/icons/soup-196.png",
+    "/icons/soup-128.png",
+    "/icons/soup-192.png",
     "/icons/soup-384.png",
     "/icons/soup-48.png",
     "/icons/soup-512.png",
+    "/icons/soup-72.png",
     "/icons/soup-96.png",
     "/index.html"
   ]

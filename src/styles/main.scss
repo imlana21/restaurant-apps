@@ -30,14 +30,14 @@ main {
 /* End Reset */
 a#skip {
     color: var(--white);
-    background-color: var(--green-2);
+    background-color: var(--white);
     text-decoration: none;
     font-weight: bold;
     transform: translateY(-100%);
     position: absolute;
 
     &:focus {
-        background-color: var(--green-2);
+        background-color: var(--white);
         z-index: 99;
         color: var(--black);
         padding: 1em;
