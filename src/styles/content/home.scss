@@ -1,6 +1,7 @@
 div#home, div#favorite { 
   div.jumbotron {
-      background: url('../images/heros/hero-image_2.jpg') no-repeat center center fixed;
+      background-image: url('/images/heros/hero-image_2.jpg');
+      background-image: url('/images/heros/hero-image_2.webp');
       color: var(--grey);
       min-height: 92vh;
       min-width: 91vw;

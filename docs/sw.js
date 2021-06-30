@@ -1,6 +1,5 @@
 var serviceWorkerOption = {
   "assets": [
-    "/bd6b63650298f334a08b66446d66c536.jpg",
     "/0.bundle.js",
     "/1.bundle.js",
     "/bundle.js",
@@ -15,6 +14,7 @@ var serviceWorkerOption = {
     "/icons/soup-512.png",
     "/icons/soup-72.png",
     "/icons/soup-96.png",
+    "/images/hero-image_2.webp",
     "/index.html"
   ]
 };
