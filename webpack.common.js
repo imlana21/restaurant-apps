@@ -16,22 +16,31 @@ module.exports = {
       {
         test: /\.s[ac]ss$/,
         use: [
-          'style-loader', 
-          'css-loader',
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
           {
             loader: 'sass-loader',
           },
         ],
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        test: /\.(png|svg|jpg|jpeg|gif|webp)$/,
         use: [
           'file-loader',
         ],
       },
     ],
   },
-  
+  resolve: {
+    modules: [
+      path.resolve(__dirname, "src", "public"),
+      "node_modules"
+    ],
+  },
   optimization: {
     splitChunks: {
       chunks: 'all',
