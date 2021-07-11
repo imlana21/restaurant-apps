@@ -1,7 +1,10 @@
-
 webpack.common.js
 webpack.dev.js
 webpack.prod.js
 specs/
 karma.conf.cjs
 karma.conf.js
+codecept.conf.js
+steps_file.js
+steps.d.ts
+e2e/

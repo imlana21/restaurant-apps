@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import { openDB } from 'idb';
 import Config from '../globals/config';
 
@@ -9,6 +10,10 @@ const dbPromise = openDB(Config.idb_name, Config.idb_version, {
 
 const FavoriteRestoDb = {
   async getResto(id) {
+    if (!id) {
+      return;
+    }
+
     return (await dbPromise).get(Config.object_store_name, id);
   },
 

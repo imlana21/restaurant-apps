@@ -5,9 +5,7 @@ const RestoBox = {
     const page = `
       <section class="box">
           <figure>
-            <picture>
-              <img class="lazyload" data-src="${ApiEndpoint.imageGet.url.lowRes(data.pictureId)}" alt="${data.name}" tabindex="0">
-            </picture>
+            <img class="lazyload" data-src="${ApiEndpoint.imageGet.url.lowRes(data.pictureId)}" alt="${data.name}" tabindex="0">
             <figcaption>
               <div>
                 <span class="rating"> Rating : ${data.rating} </span>

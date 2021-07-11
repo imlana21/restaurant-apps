@@ -56,7 +56,7 @@ const DetailResto = {
   async afterRender() {
     const likeContainer = document.getElementById('like_container');
 
-    LikedButton.init({
+    await LikedButton.init({
       buttonContainer: likeContainer,
       restoData: await this._getData(),
     });

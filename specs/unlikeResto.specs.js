@@ -1,45 +1,49 @@
 import FavoriteRestoDb from "../src/scripts/data/favorite-idb";
-import RestoDataSource from "../src/scripts/data/resto-datasource";
 import buttonPresenter from "./helpers/likePresenter";
+import saveDataToDB from "./helpers/saveDataToDB";
+import { restoId } from "./helpers/restoId";
 
-const restoId = 'rqdv5juczeskfw1e867';
-
-describe('UNLIKE BUTTON TESTING', () => {;
-  beforeEach( async () => {
+describe('(UNLIKE BUTTON TESTING)', () => {
+  beforeEach( async () => { 
     await buttonPresenter(restoId);
-    const dataResto = await RestoDataSource.detail(restoId);
-    await FavoriteRestoDb.putResto(dataResto);
+    await saveDataToDB();
   });
 
-  describe('Ketika restorant sudah disukai => ', () => {
+  describe('Ketika restorant sudah disukai =>', () => {
     it('Unlike button tampil', async () => {
+      // Cek Button Like
       expect(document.querySelector('[aria-label="unlike resto"]')).toBeTruthy();
-    }, 3000);
-
-    it('Like button tak tampil', async () => {
+    });
+  
+    it('Like button tidak tampil', async () => {
+      // Cek Button Like
       expect(document.querySelector('[aria-label="like resto"]')).toBeFalsy();
-    }, 3000);
+    });
   });
+  
+  describe('Mengecek Movie =>', () => {
+    it('Ada didatabase ketika unlike belum ditekan', async () => {
+      const resto = await FavoriteRestoDb.getResto(restoId);
+   
+      expect(resto).toEqual(jasmine.objectContaining({ id: restoId})); 
+    });
+    
+    it('Tidak ada di database ketika unlike ditekan', async () => {
+      if(document.querySelector('[aria-label="unlike resto"]')) {
+        document.getElementById('likeButton').dispatchEvent(new Event('click'));
 
-  describe('Cek data Resto di IndexDB =>', () => {
-    it('Ada ketika Unlike belum ditekan', async () => {
-      const isAvailable = await FavoriteRestoDb.getResto(restoId);
-
-      expect(isAvailable).toEqual(jasmine.objectContaining({ id: restoId }));
-    }, 3000)
-
-    it('Tidak ada ketika tombol Unlike sudah ditekan', async () => {
-      document.querySelector('#likeButton').dispatchEvent(new Event('click'));
-
-      const isAvailable = await FavoriteRestoDb.getResto(restoId);
-
-      expect(isAvailable).not.toEqual(jasmine.objectContaining({ id: restoId }));
-    }, 3000);
+        const resto = await FavoriteRestoDb.getResto(restoId);
+        
+        expect(resto).not.toEqual(jasmine.objectContaining({ id: restoId})); 
+      } else {
+        
+      }
+    });
   });
-
 
   afterEach( async () => {
-    const dataResto = await RestoDataSource.detail(restoId);
-    await FavoriteRestoDb.putResto(dataResto);
+    saveDataToDB();
+    console.log(document.getElementById('likeButton').attributes);
   });
 });
+
