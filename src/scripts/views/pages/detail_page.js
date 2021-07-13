@@ -7,6 +7,7 @@ import {
 import RestoDataSource from '../../data/resto-datasource';
 import UrlParser from '../../routes/urlParser';
 import LikedButton from '../component/liked-btn';
+import FavoriteRestoDb from '../../data/favorite-idb';
 
 const DetailResto = {
   async render() {
@@ -58,6 +59,7 @@ const DetailResto = {
 
     await LikedButton.init({
       buttonContainer: likeContainer,
+      favoritRestoIDB: FavoriteRestoDb,
       restoData: await this._getData(),
     });
   },

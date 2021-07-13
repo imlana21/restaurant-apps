@@ -91,6 +91,7 @@ module.exports = {
         ImageminMozjpeg({
           quality: 50,
           progressive: true,
+          
         }),
       ],
     }),

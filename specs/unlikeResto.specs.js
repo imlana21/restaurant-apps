@@ -1,49 +1,31 @@
 import FavoriteRestoDb from "../src/scripts/data/favorite-idb";
-import buttonPresenter from "./helpers/likePresenter";
+import { likeButtonContainer } from "./factories/containerFactories";
 import saveDataToDB from "./helpers/saveDataToDB";
-import { restoId } from "./helpers/restoId";
+import { dataResto } from "./models/dataResto";
+import unlikeRestoCekButton from "./tester/unlikeRestoCekButton";
+import unlikeRestoCekIDB from "./tester/unlikeRestoCekIDB";
 
 describe('(UNLIKE BUTTON TESTING)', () => {
-  beforeEach( async () => { 
-    await buttonPresenter(restoId);
-    await saveDataToDB();
-  });
-
-  describe('Ketika restorant sudah disukai =>', () => {
-    it('Unlike button tampil', async () => {
-      // Cek Button Like
-      expect(document.querySelector('[aria-label="unlike resto"]')).toBeTruthy();
-    });
-  
-    it('Like button tidak tampil', async () => {
-      // Cek Button Like
-      expect(document.querySelector('[aria-label="like resto"]')).toBeFalsy();
-    });
-  });
-  
-  describe('Mengecek Movie =>', () => {
-    it('Ada didatabase ketika unlike belum ditekan', async () => {
-      const resto = await FavoriteRestoDb.getResto(restoId);
-   
-      expect(resto).toEqual(jasmine.objectContaining({ id: restoId})); 
-    });
-    
-    it('Tidak ada di database ketika unlike ditekan', async () => {
-      if(document.querySelector('[aria-label="unlike resto"]')) {
-        document.getElementById('likeButton').dispatchEvent(new Event('click'));
-
-        const resto = await FavoriteRestoDb.getResto(restoId);
-        
-        expect(resto).not.toEqual(jasmine.objectContaining({ id: restoId})); 
-      } else {
-        
-      }
-    });
+  beforeEach( async () => {
+    likeButtonContainer();
+    await saveDataToDB({
+      database: FavoriteRestoDb,
+      data: dataResto
+    })
   });
 
   afterEach( async () => {
-    saveDataToDB();
+    await saveDataToDB({
+      database: FavoriteRestoDb,
+      data: dataResto
+    })
     console.log(document.getElementById('likeButton').attributes);
   });
+
+  unlikeRestoCekButton(dataResto);
+  unlikeRestoCekIDB({
+    database: FavoriteRestoDb,
+    data: dataResto
+  })
 });
 

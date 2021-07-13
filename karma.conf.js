@@ -21,8 +21,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'specs/likeResto.specs.js', watched: true},
-      //'specs/**/*.specs.js'
+      //{pattern: 'specs/unlikeResto.specs.js', watched: true},
+      'specs/**/*.specs.js'
     ],
 
 
