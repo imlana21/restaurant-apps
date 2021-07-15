@@ -4,6 +4,8 @@ div#home, div#favorite {
       min-height: 100%;
       min-width: 100%;
       background-image: url('~images/hero-image_2.webp');
+      background-position: center;
+      background-size: cover;
 
       &>div {
         background-color: rgba(0, 0, 0, .5); 

@@ -16,6 +16,7 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
+    RestoDataSource: './src/scripts/data/resto-datasource.js',
   },
   bootstrap: null,
   mocha: {},

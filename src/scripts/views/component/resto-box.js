@@ -26,7 +26,7 @@ const RestoBox = {
               <p>
                 ${this._descriptionLength(data.description)}..... 
               </p>
-              <p class="readmore">
+              <p class="readmore"> 
                 <a href="/#/detail/${data.id}" aria-label="lebih lanjut tentang ${data.name}"> Read More </a>
               </p>
             </figcaption>
