@@ -7,7 +7,21 @@ const Home = {
     return `
       <div id="home">
         <div class="jumbotron">
-          <div>
+          <picture> 
+            <source media="(max-width: 620px)" 
+                    srcset="./images/hero-small.webp"
+                    width="100%"
+                    height="300vh">
+            <source media="(max-width: 850px)" 
+                    srcset="./images/hero-medium.webp"
+                    width="100%"
+                    height="550vh">
+            <img src="./images/hero-high.webp" 
+                  alt="jumbotron"
+                  width="100%"
+                  height="550vh"/>
+          </picture>
+          <div> 
             <h1> Restaurant Apps </h1>
           </div>
         </div>

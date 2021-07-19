@@ -71,7 +71,11 @@ module.exports = {
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
     }),
-    //new BundleAnalyzerPlugin(),
+    // Bundle Analyzer
+    new BundleAnalyzerPlugin({
+      analyzerMode: "static", 
+      openAnalyzer: false
+    }),
     // Digunakan untuk mengcopy file
     new CopyWebpackPlugin({
       patterns: [
