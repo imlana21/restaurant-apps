@@ -6,11 +6,10 @@ const RestoBox = {
       <section class="box">
           <figure>
             <div>
-              <img 
-                class="lazyload" 
-                src="${ApiEndpoint.imageGet.url.lowRes(data.pictureId)}" 
-                alt="${data.name}"
-                tabindex="0"></img>
+              <img class="lazyload" 
+                   data-src="${ApiEndpoint.imageGet.url.lowRes(data.pictureId)}" 
+                   alt="${data.name}"
+                   tabindex="0" />
             </div>
             <figcaption>
               <div>

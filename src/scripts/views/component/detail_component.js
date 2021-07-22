@@ -80,7 +80,9 @@ const Detail = {
     city,
   ]) {
     return `
-      <img src="${ApiEndpoint.imageGet.url.lowRes(pictureId)}" alt="${name}">
+      <img class="lazyload" 
+           data-src="${ApiEndpoint.imageGet.url.largeRes(pictureId)}" 
+           alt="${name}">
       <div>
         <div>
           <h2> ${name} </h2>
