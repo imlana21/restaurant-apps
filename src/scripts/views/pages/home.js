@@ -11,15 +11,18 @@ const Home = {
             <source media="(max-width: 620px)" 
                     srcset="./images/hero-small.webp"
                     width="100%"
-                    height="300vh">
+                    height="300vh"
+                    style="object-fit: cover;">
             <source media="(max-width: 850px)" 
                     srcset="./images/hero-medium.webp"
                     width="100%"
-                    height="550vh">
+                    height="550vh"
+                    style="object-fit: cover;">
             <img src="./images/hero-high.webp" 
                   alt="jumbotron"
                   width="100%"
-                  height="550vh"/>
+                  height="550vh" 
+                  style="object-fit: cover;"/>
           </picture>
           <div> 
             <h1> Restaurant Apps </h1>
